@@ -1,0 +1,35 @@
+{
+	"name": "parrot",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"ios": "react-native run-ios",
+		"android": "react-native run-android",
+		"test": "jest"
+	},
+	"dependencies": {
+		"firacode": "^1.205.0",
+		"marked": "^0.3.6",
+		"moment": "^2.19.2",
+		"react": "16.0.0",
+		"react-native": "0.50.3",
+		"react-native-drawer": "^2.5.0",
+		"react-native-modalbox": "^1.4.2",
+		"react-native-router-flux": "^4.0.0-beta.24",
+		"react-native-status-bar-height": "^1.0.1",
+		"react-native-swipe-list-view": "^0.4.6",
+		"react-native-swiper": "^1.5.13",
+		"react-native-vector-icons": "^4.4.2",
+		"realm": "^2.0.10"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
