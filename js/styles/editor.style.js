@@ -54,13 +54,13 @@ const base = StyleSheet.create({
   headerSetting: {
     backgroundColor: 'rgba(255, 255, 255, .87)',
     paddingTop: getStatusBarHeight(),
-    borderBottomColor: '#e7e7e7',
+    borderBottomColor: '#f6f6f6',
     borderBottomWidth: 1,
   },
   pickerContainer: {
     flexDirection: 'row',
     height: 120,
-    backgroundColor: '#777',
+    backgroundColor: '#fff',
     borderBottomColor: '#f6f6f6',
     borderBottomWidth: 1,
   },
