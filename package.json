@@ -9,12 +9,14 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"evernote": "^2.0.2",
 		"firacode": "^1.205.0",
 		"marked": "^0.3.6",
 		"moment": "^2.19.2",
 		"react": "16.0.0",
 		"react-native": "0.50.3",
 		"react-native-drawer": "^2.5.0",
+		"react-native-evernote": "^0.1.0",
 		"react-native-modalbox": "^1.4.2",
 		"react-native-router-flux": "^4.0.0-beta.24",
 		"react-native-status-bar-height": "^1.0.1",

@@ -25,7 +25,6 @@ const base = StyleSheet.create({
     fontWeight: 'bold',
   },
   textContainer: {
-    marginTop: 12,
   },
   text: {
     fontSize: 16,

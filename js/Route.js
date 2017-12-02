@@ -6,6 +6,7 @@ import {
 import Main from './components/Main';
 import Editor from './components/Editor';
 import Slide from './components/Slide';
+import Evernote from './components/Evernote';
 
 export default class Route extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class Route extends Component {
           <Scene hideNavBar={true} key='main' component={Main} initial />
           <Scene hideNavBar={true} key='editor' component={Editor} />
           <Scene hideNavBar={true} key='slide' component={Slide} />
+          <Scene hideNavBar={true} key='evernote'note component={Evernote} />
         </Scene>
       </Router>
     );
