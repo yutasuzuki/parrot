@@ -53,6 +53,11 @@ class Evernote extends Component {
               box-shadow: noen;
             }
 
+            input[type=text],
+            input[type=password] {
+              font-size: 16px;
+            }
+
             .btn-login {
               position: relative;
               display: inline-block;
