@@ -30,7 +30,8 @@ class Evernote extends Component {
     this.refs.myWebView.postMessage("This is my land times");
   }
 
-  onMessage(data) {
+  onMessage(e) {
+    const data = JSON.parse(e.nativeEvent.data)
     console.log(data);
   }
 
@@ -95,10 +96,10 @@ class Evernote extends Component {
             const password = document.getElementById('js-password');
             const login = document.getElementById('js-login');
             login.addEventListener('click', function(e) {
-              const data = {
+              const data = JSON.stringify({
                 id: id.value,
                 password: password.value
-              };
+              });
               window.postMessage(data);
             });
           </script>
