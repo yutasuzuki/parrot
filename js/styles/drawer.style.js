@@ -39,13 +39,11 @@ const drawer = StyleSheet.create({
   listContent: {
 		flex: 5,
     paddingTop: 18,
-    paddingBottom: 18,
 		borderBottomColor: '#3e3e3e',
 		borderBottomWidth: 1,
+    height: 56,
   },
   listText: {
-    paddingTop: 18,
-    paddingBottom: 18,
     color: '#fff',
   },
 });

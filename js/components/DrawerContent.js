@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Drawer from 'react-native-drawer';
+import { Actions } from 'react-native-router-flux';
 import style from '../styles';
 import List from './List';
 
@@ -38,14 +39,17 @@ class DrawerContent extends Component {
         <View>
           <View style={style.drawer.list}>
             <TouchableHighlight style={style.drawer.listRow}>
-              <View style={style.drawer.listItem}>
+              <TouchableOpacity 
+                style={style.drawer.listItem}
+                onPress={Actions.evernote}
+              >
                 <View style={style.drawer.listIcon}>
                   <Text>■</Text>
                 </View>
                 <View style={style.drawer.listContent}>
                   <Text style={style.drawer.listText}>EVERNOTE Login</Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             </TouchableHighlight>
           </View>
         </View>
