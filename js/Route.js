@@ -18,7 +18,7 @@ export default class Route extends Component {
           <Scene hideNavBar={true} key='editor' component={Editor} />
           <Scene hideNavBar={true} key='slide' component={Slide} />
           <Scene hideNavBar={true} key='editable' component={Editable} />
-          <Scene hideNavBar={true} key='evernote' note component={Evernote} />
+          <Scene hideNavBar={true} key='evernote' component={Evernote} />
         </Scene>
       </Router>
     );

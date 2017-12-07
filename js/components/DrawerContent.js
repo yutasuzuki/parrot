@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { 
-  Text, 
-  View, 
+import {
+  Text,
+  View,
   ListView,
   ScrollView,
   TouchableHighlight,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Drawer from 'react-native-drawer';
+import Modal from 'react-native-modalbox';
 import { Actions } from 'react-native-router-flux';
 import style from '../styles';
 import List from './List';
@@ -16,6 +17,9 @@ import List from './List';
 class DrawerContent extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      madal: false
+    }
   }
 
   componentWillReceiveProps() {
@@ -38,9 +42,9 @@ class DrawerContent extends Component {
         </View>
         <View>
           <View style={style.drawer.list}>
-            <TouchableHighlight style={style.drawer.listRow}>
-              <TouchableOpacity 
-                style={style.drawer.listItem}
+            <View style={style.drawer.listItem}>
+              <TouchableOpacity
+                style={style.drawer.listRow}
                 onPress={Actions.evernote}
               >
                 <View style={style.drawer.listIcon}>
@@ -50,9 +54,38 @@ class DrawerContent extends Component {
                   <Text style={style.drawer.listText}>EVERNOTE Login</Text>
                 </View>
               </TouchableOpacity>
-            </TouchableHighlight>
+            </View>
+            <View style={style.drawer.listItem}>
+              <TouchableOpacity
+                style={style.drawer.listRow}
+                onPress={() => this.refs.contactModal.open()}
+              >
+                <View style={style.drawer.listIcon}>
+                  <Text>■</Text>
+                </View>
+                <View style={style.drawer.listContent}>
+                  <Text style={style.drawer.listText}>Contact</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
+        <Modal backdrop={false} position={'bottom'} ref={'contactModal'}>
+          <View>
+            <View style={style.editor.headerSetting}>
+              <View style={style.header.inner}>
+                <TouchableHighlight
+                  underlayColor='#efb7bc'
+                  style={style.header.right}
+                >
+                  <Text>Close</Text>
+                </TouchableHighlight>
+              </View>
+            </View>
+            <View style={style.editor.pickerContainer}>
+            </View>
+          </View>
+        </Modal>
       </View>
     )
   }

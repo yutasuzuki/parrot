@@ -18,29 +18,21 @@ const drawer = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  list: {
-    flex: 1,
-  },
   listRow: {
-		flex: 1,
-		flexDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'center',
   },
-  listItem: {
-		flex: 1,
-		flexDirection: 'row',
-  },
   listIcon: {
-		flex: 1,
+    flex: 1,
     paddingTop: 18,
-		alignItems: 'center',
-		borderBottomColor: '#3e3e3e',
+    alignItems: 'center',
+    borderBottomColor: '#3e3e3e',
   },
   listContent: {
-		flex: 5,
+    flex: 5,
     paddingTop: 18,
-		borderBottomColor: '#3e3e3e',
-		borderBottomWidth: 1,
+    borderBottomColor: '#3e3e3e',
+    borderBottomWidth: 1,
     height: 56,
   },
   listText: {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { 
-  Text, 
+import {
+  Text,
   View,
   ScrollView,
   TextInput,
@@ -19,7 +19,7 @@ export function random(min = 0, max = 100) {
 }
 
 class Editor extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     const id = props.navigation.state.params.id;
 
@@ -46,12 +46,12 @@ class Editor extends Component {
     this.isSave = true;
     Actions.pop();
   }
-  
+
   async componentWillUnmount() {
     if (this.isSave) {
       await SpeechModel.createSpeech(this.state);
       const id = random();
-      Actions.refresh({id});
+      Actions.refresh({ id });
     }
   }
 
@@ -98,7 +98,7 @@ class Editor extends Component {
                 style={style.editor.title}
                 placeholder='TITLE'
                 multiline={true}
-                onChangeText={(title) => this.setState({title})}
+                onChangeText={(title) => this.setState({ title })}
                 editable={true}
                 value={this.state.title}
               />
@@ -108,14 +108,14 @@ class Editor extends Component {
                 style={style.editor.text}
                 placeholder='Awesome Speech...'
                 multiline={true}
-                onChangeText={(text) => this.setState({text})}
+                onChangeText={(text) => this.setState({ text })}
                 editable={true}
                 value={this.state.text}
               />
             </View>
           </ScrollView>
         </KeyboardAvoidingView>
-        <TouchableHighlight 
+        <TouchableHighlight
           underlayColor='#efb7bc'
           onPress={() => this.refs.settingModal.open()}
           style={style.editor.btnSettingContainer}
@@ -127,10 +127,10 @@ class Editor extends Component {
           </View>
         </TouchableHighlight>
         <Modal backdrop={false} position={'top'} ref={'settingModal'}>
-          <EditorOption 
+          <EditorOption
             notificationTimes={this.state.notificationTimes}
             changePicker={(notificationTimes) => {
-              this.setState({notificationTimes});
+              this.setState({ notificationTimes });
             }}
           />
         </Modal>
@@ -140,7 +140,7 @@ class Editor extends Component {
 }
 
 class EditorOption extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       notificationTimes: this.props.notificationTimes,
@@ -152,21 +152,21 @@ class EditorOption extends Component {
       timerSeconds3: this.getSeconds(this.props.notificationTimes[2])
     };
   }
-  
+
   componentWillUnmount() {
     console.log('componentWillUnmount');
     console.log('this.props', this.props);
     this.props.changePicker(this.addTotalSeconds());
   }
-  
+
   getMinites(value) {
     return Math.floor(value / 60);;
   }
-    
+
   getSeconds(value) {
     return Math.floor(value % 60);;
   }
-  
+
   addTotalSeconds() {
     const totalSeconds1 = this.state.timerMinites1 * 60 + this.state.timerSeconds1;
     const totalSeconds2 = this.state.timerMinites2 * 60 + this.state.timerSeconds2;
@@ -177,7 +177,7 @@ class EditorOption extends Component {
       totalSeconds3,
     ]
   }
-  
+
   setTimePickerItem() {
     const items = [];
     for (let i = 0; i < 60; i++) {
@@ -195,11 +195,11 @@ class EditorOption extends Component {
   }
 
   render() {
-    let pickerItemMinites = this.createMinites().map( (v, i) => {
+    let pickerItemMinites = this.createMinites().map((v, i) => {
       return <Picker.Item key={i} value={v} label={v.toString() + '分'} />
     });
-        
-    let pickerItemSeconds = this.createSeconds().map( (v, i) => {
+
+    let pickerItemSeconds = this.createSeconds().map((v, i) => {
       return <Picker.Item key={i} value={v} label={v.toString() + '秒'} />
     });
     return (
@@ -219,12 +219,12 @@ class EditorOption extends Component {
             <Text>タイマー１</Text>
           </View>
           <View style={style.editor.pickerColumn} >
-            <Picker 
+            <Picker
               selectedValue={this.state.timerMinites1}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerMinites1: itemValue});
+                this.setState({ timerMinites1: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemMinites}
             </Picker>
@@ -233,9 +233,9 @@ class EditorOption extends Component {
             <Picker
               selectedValue={this.state.timerSeconds1}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerSeconds1: itemValue});
+                this.setState({ timerSeconds1: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemSeconds}
             </Picker>
@@ -246,12 +246,12 @@ class EditorOption extends Component {
             <Text>タイマー２</Text>
           </View>
           <View style={style.editor.pickerColumn} >
-            <Picker 
+            <Picker
               selectedValue={this.state.timerMinites2}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerMinites2: itemValue});
+                this.setState({ timerMinites2: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemMinites}
             </Picker>
@@ -260,9 +260,9 @@ class EditorOption extends Component {
             <Picker
               selectedValue={this.state.timerSeconds2}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerSeconds2: itemValue});
+                this.setState({ timerSeconds2: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemSeconds}
             </Picker>
@@ -273,12 +273,12 @@ class EditorOption extends Component {
             <Text>タイマー３</Text>
           </View>
           <View style={style.editor.pickerColumn} >
-            <Picker 
+            <Picker
               selectedValue={this.state.timerMinites3}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerMinites3: itemValue});
+                this.setState({ timerMinites3: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemMinites}
             </Picker>
@@ -287,9 +287,9 @@ class EditorOption extends Component {
             <Picker
               selectedValue={this.state.timerSeconds3}
               onValueChange={(itemValue, itemIndex) => {
-                this.setState({ timerSeconds3: itemValue});
+                this.setState({ timerSeconds3: itemValue });
               }}
-              itemStyle={{height: 120}}
+              itemStyle={{ height: 120 }}
             >
               {pickerItemSeconds}
             </Picker>
