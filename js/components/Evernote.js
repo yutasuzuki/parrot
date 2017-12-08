@@ -7,9 +7,11 @@ import {
   TouchableHighlight,
   TouchableOpacity
 } from 'react-native';
-import style from '../styles'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
+import style from '../styles';
 
-class Evernote extends Component {
+class EvernoteLogin extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,12 +28,16 @@ class Evernote extends Component {
 
   }
 
+  pop() {
+    Actions.pop();
+  }
+
   onPressButton() {
-    this.refs.myWebView.postMessage("This is my land times");
+    this.refs.EvernoteLogin.postMessage("This is my land times");
   }
 
   onMessage(e) {
-    const data = JSON.parse(e.nativeEvent.data)
+    const data = JSON.parse(e.nativeEvent.data);
     console.log(data);
   }
 
@@ -80,18 +86,20 @@ class Evernote extends Component {
         </head>
         <body>
           <div id="content">
-              This is my name
+            <a href='/hoge'>This is my name</a>
           </div>
           <div>
             <div>
-              <input type='text' id='js-id'>
+              <div>
+                <input type='text' id='js-id'>
+              </div>
+              <div>
+                <input type='password' id='js-password'>
+              </div>
             </div>
             <div>
-              <input type='password' id='js-password'>
+              <a id='js-login' class='btn-login'>LOGIN</a>
             </div>
-          </div>
-          <div>
-            <a id='js-login' class='btn-login'>LOGIN</a>
           </div>
           <script>
             document.addEventListener('message', function(e) {
@@ -102,6 +110,7 @@ class Evernote extends Component {
             const login = document.getElementById('js-login');
             login.addEventListener('click', function(e) {
               const data = JSON.stringify({
+                type: 'login',
                 id: id.value,
                 password: password.value
               });
@@ -113,24 +122,45 @@ class Evernote extends Component {
     `;
     return (
       <View style={style.base.container}>
-        <TouchableHighlight
-          style={style.header.container}
-          onPress={this.onPressButton.bind(this)}>
-          <Text>Press me to increase click</Text>
-        </TouchableHighlight>
+
+        <View style={style.header.container}>
+          <View style={style.header.inner}>
+            <TouchableHighlight
+              underlayColor='#efb7bc'
+              style={style.header.left}
+              onPress={this.pop.bind(this)}
+            >
+              <Icon name={'chevron-left'} size={20} color={style.color.primary} />
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor='#f6f6f6'
+              style={style.header.timer}
+            >
+              <Text>Evernote Login</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor='#efb7bc'
+              style={style.header.right}
+              onPress={this.onPressButton.bind(this)}
+            >
+              <Text>確認</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+
         <View
           style={style.list.container}
         >
-        <WebView 
-          source={{html}}
-          ref="myWebView"
-          javaScriptEnabledAndroid={true}
-          onMessage={this.onMessage}
-        />
+          <WebView 
+            source={{html}}
+            ref="EvernoteLogin"
+            javaScriptEnabledAndroid={true}
+            onMessage={this.onMessage}
+          />
         </View>
       </View>
     )
   }
 }
 
-export default Evernote;
+export default EvernoteLogin;
