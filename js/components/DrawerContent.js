@@ -48,7 +48,7 @@ class DrawerContent extends Component {
                 onPress={Actions.evernote}
               >
                 <View style={style.drawer.listIcon}>
-                  <Text>■</Text>
+                  <Text><Icon name={'envelope'} size={20} color={'#fff'} /></Text>
                 </View>
                 <View style={style.drawer.listContent}>
                   <Text style={style.drawer.listText}>EVERNOTE Login</Text>
@@ -58,10 +58,10 @@ class DrawerContent extends Component {
             <View style={style.drawer.listItem}>
               <TouchableOpacity
                 style={style.drawer.listRow}
-                onPress={() => this.refs.contactModal.open()}
+                onPress={Actions.contact}
               >
                 <View style={style.drawer.listIcon}>
-                  <Text>■</Text>
+                  <Text><Icon name={'envelope'} size={20} color={'#fff'} /></Text>
                 </View>
                 <View style={style.drawer.listContent}>
                   <Text style={style.drawer.listText}>Contact</Text>
@@ -71,12 +71,13 @@ class DrawerContent extends Component {
           </View>
         </View>
         <Modal backdrop={false} position={'bottom'} ref={'contactModal'}>
-          <View>
+          <View style={style.contact.container}>
             <View style={style.editor.headerSetting}>
               <View style={style.header.inner}>
                 <TouchableHighlight
                   underlayColor='#efb7bc'
-                  style={style.header.right}
+                  style={style.header.left}
+                  onPress={() => Actions.pop()}
                 >
                   <Text>Close</Text>
                 </TouchableHighlight>

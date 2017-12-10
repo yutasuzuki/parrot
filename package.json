@@ -9,6 +9,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"axios": "^0.17.1",
 		"evernote": "^2.0.2",
 		"firacode": "^1.205.0",
 		"marked": "^0.3.6",

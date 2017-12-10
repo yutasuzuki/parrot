@@ -6,6 +6,7 @@ import text from './text.style';
 import markdown from './markdown.style';
 import editor from './editor.style';
 import drawer from './drawer.style';
+import contact from './contact.style';
 import { color } from './setting.style';
 
 const style = {
@@ -17,6 +18,7 @@ const style = {
   markdown,
   editor,
   drawer,
+  contact,
   color
 };
 
