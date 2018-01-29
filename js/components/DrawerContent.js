@@ -68,6 +68,19 @@ class DrawerContent extends Component {
                 </View>
               </TouchableOpacity>
             </View>
+            <View style={style.drawer.listItem}>
+              <TouchableOpacity
+                style={style.drawer.listRow}
+                onPress={Actions.editable}
+              >
+                <View style={style.drawer.listIcon}>
+                  <Text><Icon name={'envelope'} size={20} color={'#fff'} /></Text>
+                </View>
+                <View style={style.drawer.listContent}>
+                  <Text style={style.drawer.listText}>editable</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <Modal backdrop={false} position={'bottom'} ref={'contactModal'}>

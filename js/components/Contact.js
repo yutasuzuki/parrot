@@ -29,9 +29,8 @@ class Contact extends Component {
 
   send() {
     const text = `メッセージがありんす！
-    --- Message ---
-    ${this.state.text}
-    `;
+> ${this.state.text.replace(/\n/g, '\n> ')}
+`;
     const query = Object.assign({}, Constants.CONTACT.query, {text})
     axios.post(Constants.CONTACT.url, query)
       .then(function (response) {
@@ -82,7 +81,7 @@ class Contact extends Component {
             <View style={style.editor.textContainer}>
               <TextInput
                 style={style.editor.text}
-                placeholder=''
+                placeholder='ご意見/ご要望をお書き下さい'
                 multiline={true}
                 onChangeText={(text) => this.setState({ text })}
                 editable={true}

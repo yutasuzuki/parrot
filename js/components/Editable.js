@@ -7,6 +7,7 @@ import {
   TouchableHighlight,
   TouchableOpacity
 } from 'react-native';
+import style from '../styles';
 
 class Editable extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Editable extends Component {
   render() {
     return (
       <View style={style.drawer.container}>
-        <Text>Editable!!</Text>
+        <Text>Editable!!!</Text>
       </View>
     )
   }

@@ -54,7 +54,7 @@ const list = StyleSheet.create({
     color: '#adadad',
   },
   context: {
-		flex: 15,
+		flex: 13,
     paddingTop: 18,
     paddingBottom: 20,
 		borderBottomColor: '#dfdfdf',
