@@ -12,9 +12,11 @@
 		"axios": "^0.17.1",
 		"evernote": "^2.0.2",
 		"firacode": "^1.205.0",
+		"immutable": "^3.8.2",
 		"marked": "^0.3.6",
 		"moment": "^2.19.2",
-		"react": "16.0.0",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
 		"react-native": "0.50.3",
 		"react-native-drawer": "^2.5.0",
 		"react-native-evernote": "^0.1.0",
@@ -24,7 +26,10 @@
 		"react-native-swipe-list-view": "^0.4.6",
 		"react-native-swiper": "^1.5.13",
 		"react-native-vector-icons": "^4.4.2",
-		"realm": "^2.0.10"
+		"react-native-wkwebview-reborn": "^1.10.0",
+		"realm": "^2.0.10",
+		"slate": "^0.32.2",
+		"slate-react": "^0.11.2"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
