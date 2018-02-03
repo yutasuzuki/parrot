@@ -11,6 +11,7 @@ import {
 import style from '../styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
+import jsBandle from './Slate';
 
 class Editable extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class Editable extends Component {
     </head>
     <body>
       <div class='content'>ほげー</div>
+      <script>alert()</script>
     </body>
     </html>
     `
@@ -73,6 +75,7 @@ class Editable extends Component {
         </View>
         <WebView 
           source={{ html }}
+          injectedJavaScript={jsBandle.toString()}
         />
       </View>
     )
